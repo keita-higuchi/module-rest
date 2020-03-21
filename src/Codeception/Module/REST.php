@@ -179,6 +179,11 @@ EOF;
         $this->connectionModule->haveHttpHeader($name, $value);
     }
 
+    public function haveRawHttpHeader($name, $value)
+    {
+        $this->connectionModule->headers[$name] = $value;
+    }
+
     /**
      * Deletes the header with the passed name.  Subsequent requests
      * will not have the deleted header in its request.
